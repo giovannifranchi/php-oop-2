@@ -10,7 +10,7 @@ class Product {
     protected  $animal;
     protected  $img;
 
-    function __construct(int $_id,string $_name,float $_price,Animal $_animal,string $_img)
+   public function __construct(int $_id,string $_name,float $_price,Animal $_animal,string $_img)
     {
         $this->id = $_id;
         $this->name = $_name;

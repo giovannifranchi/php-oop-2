@@ -14,15 +14,26 @@ $result = [];
 foreach($items as $key => $item){
     switch($item['item-type']){
         case 'food':
-            array_push($result, new Food($item['id'], $item['name'], $item['price'], new Animal($item['animal']), 'prova', $item['weight'], $item['ingradients']));
+            $newItem = new Food($item['id'], $item['name'], $item['price'], new Animal($item['animal']), 'prova', $item['weight'], $item['ingradients']);
+            $json = $newItem->getJsonData();
+            array_push($result, $json);
             break;
         case 'toy':
-            array_push($result, new Toy($item['id'], $item['name'], $item['price'], new Animal($item['animal']), 'prova', $item['features'], new Size($item['size']['height'],$item['size']['width'], $item['size']['depth'])));
+            $newItem = new Toy($item['id'], $item['name'], $item['price'], new Animal($item['animal']), 'prova', $item['features'], new Size($item['size']['height'],$item['size']['width'], $item['size']['depth']));
+            $json = $newItem->getJsonData();
+            array_push($result, $json);
             break;
         case 'gadjet': 
-            array_push($result, new Gadjet($item['id'], $item['name'], $item['price'], new Animal($item['animal']), 'prova', $item['material'], new Size($item['size']['height'],$item['size']['width'], $item['size']['depth'])));
+            $newItem = new Gadjet($item['id'], $item['name'], $item['price'], new Animal($item['animal']), 'prova', $item['material'], new Size($item['size']['height'],$item['size']['width'], $item['size']['depth']));
+            $json = $newItem->getJsonData();
+            array_push($result, $json);
             break;
     }
 }
 
-var_dump($result);
+
+header('Content-Type: application/json');
+
+echo json_encode($result);
+
+
