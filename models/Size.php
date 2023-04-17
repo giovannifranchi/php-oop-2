@@ -12,7 +12,3 @@ class Size{
         $this->depth = $_depth;
     }
 }
-
-$size = new Size(1,2,3);
-
-var_dump($size);

@@ -6,27 +6,12 @@ class Food extends Product {
     private  $weight;
     private  $ingradients;
 
-    function __construct($_id, $_name, $_price, $_animal, $_img,int $_weight, array $_ingradients)
+    function __construct(int $_id,string $_name,float $_price,Animal $_animal,string $_img,int $_weight, array $_ingradients)
     {
         parent::__construct($_id, $_name, $_price, $_animal, $_img);    
-        
         $this->weight = $_weight;
         $this->ingradients = $_ingradients;
     }
-
-    public function _get_ingradients_string(){
-        return implode(", ", $this->ingradients);
-    }
-
-
-    public function _get_weight(){
-        return $this->weight;
-    }
-
-    public function _get_weight_in_grams(){
-        return "{$this->weight}g";
-    }
-
 
 }
 

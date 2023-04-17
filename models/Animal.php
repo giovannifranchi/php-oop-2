@@ -4,7 +4,7 @@ class Animal {
     public $type;
     public $icon;
 
-    function __construct($_type)
+    function __construct(string $_type)
     {
         $this->type = $_type;
         $this->icon = $this->_set_icon($_type);
