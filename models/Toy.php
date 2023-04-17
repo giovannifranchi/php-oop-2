@@ -14,7 +14,6 @@ class Toy extends Product{
         $this->features = $_features;
         $this->size = Helper::_set_size($_size);
     }
-
 }
 
 
