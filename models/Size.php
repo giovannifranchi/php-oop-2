@@ -13,6 +13,6 @@ class Size{
     }
 }
 
-$size = new Size();
+$size = new Size(1,2,3);
 
 var_dump($size);
